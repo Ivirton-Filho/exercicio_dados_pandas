@@ -63,4 +63,13 @@ df['mes'] = df['data'].dt.month
 faturamento_mes = df.groupby('mes')['total_venda'].sum().reset_index()
 print(faturamento_mes)
 
+#desafio 02 -Crie um gráfico de linha mostrando a tendência de vendas
+plt.figure(figsize=(10, 6))
+plt.plot(faturamento_mes['mes'], faturamento_mes['total_venda'], marker='o', linestyle='-', color='blue', linewidth=2, markersize=8)
+
+plt.title('Tendência de Faturamento Mensal (2024)', fontsize=16, fontweight='bold')
+plt.xlabel('Mês', fontsize=12)
+plt.ylabel('Faturamento Total (R$)', fontsize=12)
+plt.show()
+
 
