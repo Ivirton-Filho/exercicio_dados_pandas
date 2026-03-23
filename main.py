@@ -72,4 +72,14 @@ plt.xlabel('Mês', fontsize=12)
 plt.ylabel('Faturamento Total (R$)', fontsize=12)
 plt.show()
 
+# desafio 4 
+# vendas que somam mais que 200 
 
+vendas_altas = dataframe[dataframe['total_venda'] > 200]
+print(f"Quantidade de vendas acima de R$200,00: {len(vendas_altas)}")
+
+# analise quais categorias dominam as vendas de alto valor
+
+categorias_altas = vendas_altas['categoria'].value_counts().reset_index()
+categorias_altas.columns = ['categoria', 'quantidade']
+print(categorias_altas)
